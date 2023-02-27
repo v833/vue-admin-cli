@@ -1,5 +1,6 @@
 <template>
-  <router-view />
+  <h2>admin</h2>
+  <RouterView />
 </template>
 
 <script setup lang="ts"></script>
