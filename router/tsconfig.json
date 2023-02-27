@@ -12,7 +12,11 @@
     "lib": ["ESNext", "DOM"],
     "skipLibCheck": true,
     "noEmit": true,
-    "allowJs": true
+    "allowJs": true,
+    "baseUrl": ".",
+    "paths": {
+      "@/*": ["src/*"]
+    }
   },
   "include": [
     "src/**/*.ts",
@@ -20,7 +24,10 @@
     "src/**/*.tsx",
     "src/**/*.vue",
     "src/main.ts",
-    "src/main.ts"
+    "vite/**/*.ts",
+    "vite/**/*.d.ts",
+    "vite/**/*.tsx",
+    "vite/**/*.vue"
   ],
   "references": [{ "path": "./tsconfig.node.json" }]
 }

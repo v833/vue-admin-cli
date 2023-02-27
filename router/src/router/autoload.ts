@@ -7,7 +7,7 @@ function getRoutes() {
   const layoutRoutes: RouteRecordRaw[] = []
   Object.entries(layouts).forEach(([path, module]) => {
     const route = getRouteByModule(path, module as any)
-    route.children = getChildrenRoutes(route) || []
+    route.children = getChildrenRoutes(route)
     layoutRoutes.push(route)
   })
   return layoutRoutes
@@ -20,7 +20,8 @@ function getRouteByModule(file: string, module: any): RouteRecordRaw {
     name: name.replace('/', '.'),
     component: module.default
   }
-  return route
+  // return
+  return Object.assign(route, module.default.route || {})
 }
 
 function getChildrenRoutes(layoutRoute: RouteRecordRaw): RouteRecordRaw[] {

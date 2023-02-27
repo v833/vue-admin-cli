@@ -1,13 +1,7 @@
 <template>
-  <div>user.vue</div>
+  <div>live</div>
 </template>
 
 <script setup lang="ts"></script>
 
 <style lang="scss" scoped></style>
-
-<script>
-export default {
-  route: { path: '/user' }
-}
-</script>
