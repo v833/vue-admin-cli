@@ -2,9 +2,6 @@
   <router-view />
 </template>
 
-<script setup lang="ts">
-const url = import.meta.env.VITE_ROUTE_AUTOLOAD
-console.log('url: ', url)
-</script>
+<script setup lang="ts"></script>
 
 <style lang="scss" scoped></style>

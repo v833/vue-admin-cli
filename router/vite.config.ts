@@ -1,16 +1,17 @@
-import { defineConfig } from 'vite'
+import { ConfigEnv, loadEnv } from 'vite'
 import vue from '@vitejs/plugin-vue'
-import path from 'path'
+import alias from './vite/alias'
+import { parseEnv } from './vite/utils'
 
-// https://vitejs.dev/config/
-export default defineConfig({
-  plugins: [vue()],
-  resolve: {
-    alias: {
-      '@': path.resolve(__dirname, 'src'),
-      '@views': path.resolve(__dirname, 'src/views'),
-      '@router': path.resolve(__dirname, 'src/router'),
-      '@layouts': path.resolve(__dirname, 'src/layouts')
+export default ({ command, mode }: ConfigEnv) => {
+  const isBuid = command === 'build'
+  const root = process.cwd()
+  const env = parseEnv(loadEnv(mode, root))
+
+  return {
+    plugins: [vue()],
+    resolve: {
+      alias
     }
   }
-})
+}
