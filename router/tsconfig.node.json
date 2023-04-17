@@ -6,5 +6,15 @@
     "allowSyntheticDefaultImports": true,
     "baseUrl": "."
   },
-  "include": ["vite.config.ts", "vite/**/*.ts", "vite/**/*.d.ts", "vite/**/*.tsx", "vite/**/*.vue"]
+  "include": [
+    "vite.config.ts",
+    "vite/**/*.ts",
+    "vite/**/*.d.ts",
+    "vite/**/*.tsx",
+    "vite/**/*.vue",
+    "./src/**/*.ts",
+    "./src/**/*.d.ts",
+    "./src/**/*.tsx",
+    "./src/**/*.vue"
+  ]
 }
